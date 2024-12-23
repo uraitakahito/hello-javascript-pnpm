@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "run selected file",
+      "type": "node",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      // program - an absolute path to the Node.js program to debug.
+      // ${file} - the currently open file.
+      "program": "${file}",
+      // break immediately when the program launches
+      "stopOnEntry": true
+    },
+    {
+      "name": "Debug current Jest Test with pnpm",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "sh",
+      "program": "node_modules/.bin/jest",
+      "args": ["${relativeFile}"],
+      "console": "integratedTerminal",
+      // the visibility of the Debug Console panel during a debugging session.
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
