@@ -1,6 +1,13 @@
 {
   "version": "0.2.0",
   "configurations": [
+    //
+    // NOTE:
+    //
+    // The difference between args and runtimeArgs in VSCode's launch.json
+    // https://stackoverflow.com/questions/42207740/what-is-the-difference-between-args-and-runtimeargs-in-vscodes-launch-json
+    //
+
     {
       "name": "run selected file",
       "type": "node",
