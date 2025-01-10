@@ -18,17 +18,6 @@
       "program": "${file}",
       // break immediately when the program launches
       "stopOnEntry": true
-    },
-    {
-      "name": "Debug current Jest Test with pnpm",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "sh",
-      "program": "node_modules/.bin/jest",
-      "args": ["${relativeFile}"],
-      "console": "integratedTerminal",
-      // the visibility of the Debug Console panel during a debugging session.
-      "internalConsoleOptions": "neverOpen"
     }
   ]
 }
