@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cleandep": "rm -rf node_modules",
     "test": "jest"
   },
   "keywords": [],
