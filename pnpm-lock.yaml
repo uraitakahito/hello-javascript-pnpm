@@ -7,6 +7,16 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@uraitakahito/hello-commonjs':
+        specifier: ^1.0.8
+        version: 1.0.8
+      '@uraitakahito/hello-conditional-exports':
+        specifier: ^1.0.1
+        version: 1.0.1
+      '@uraitakahito/hello-esmodule':
+        specifier: ^1.0.2
+        version: 1.0.2
     devDependencies:
       eslint:
         specifier: '8'
@@ -68,6 +78,15 @@ packages:
 
   '@ungap/structured-clone@1.2.1':
     resolution: {integrity: sha512-fEzPV3hSkSMltkw152tJKNARhOupqbH96MZWyRjNaYZOMIzbrTeQDG+MTc6Mr2pgzFQzFxAfmhGDNP5QK++2ZA==}
+
+  '@uraitakahito/hello-commonjs@1.0.8':
+    resolution: {integrity: sha512-RUKEwps2GvyToer6mHnMTTA+jPT/uqNY0JE2DdBMet+WycN+GM5tDm+PbMNYGZAGwb5fHAfO2pueodPH+787OA==}
+
+  '@uraitakahito/hello-conditional-exports@1.0.1':
+    resolution: {integrity: sha512-dY90sH2mR7fyTYtGiw0FtRyzhEZjv5R5t54Q8giPqpKJzobdoVCvToliU0VQRFRR7JinGtZGFP9v5vx58evedg==}
+
+  '@uraitakahito/hello-esmodule@1.0.2':
+    resolution: {integrity: sha512-rBvC8rFBMIIUzVNnGLTD7tW3+1xyPCwVPIoiVlkrGt9ueTC01GLJR/TIc+Ihz5L+zIwRhFfBna31vsDnJHZyyQ==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1008,6 +1027,12 @@ snapshots:
   '@types/json5@0.0.29': {}
 
   '@ungap/structured-clone@1.2.1': {}
+
+  '@uraitakahito/hello-commonjs@1.0.8': {}
+
+  '@uraitakahito/hello-conditional-exports@1.0.1': {}
+
+  '@uraitakahito/hello-esmodule@1.0.2': {}
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
