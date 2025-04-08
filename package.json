@@ -17,6 +17,8 @@
   "dependencies": {
     "@uraitakahito/hello-commonjs": "^1.0.8",
     "@uraitakahito/hello-conditional-exports": "^1.0.1",
-    "@uraitakahito/hello-esmodule": "^1.0.2"
+    "@uraitakahito/hello-esmodule": "^1.0.2",
+    "crypto": "^1.0.1",
+    "jsonrpc2-ws": "1.0.0-beta24"
   }
 }

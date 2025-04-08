@@ -5,4 +5,5 @@
 % pnpm cleandep
 % pnpm install
 % pnpm test
+% node --env-file .env src/bitflyer-json-rpc-client.mjs
 ```
