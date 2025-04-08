@@ -11,13 +11,25 @@
   "editor.wordWrap": "on",
 
   //
+  // Copilot Next Edit Suggestions (Preview)
+  // https://code.visualstudio.com/updates/v1_97#_copilot-next-edit-suggestions-preview
+  //
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  //
   // JSON/JSONC
   //
   "[json]": {
-    "editor.formatOnSave": true
+    "editor.detectIndentation": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
   },
   "[jsonc]": {
-    "editor.formatOnSave": true
+    "editor.detectIndentation": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
   },
 
   //
