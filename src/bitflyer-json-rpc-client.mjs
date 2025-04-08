@@ -6,8 +6,7 @@ const RPCClient = jsonrpc2.Client;
 
 const { BITFLYER_API_KEY, BITFLYER_API_SECRET } = process.env;
 
-// const publicChannels = ['lightning_executions_BTC_JPY'];
-const publicChannels = [];
+const publicChannels = ['lightning_executions_BTC_JPY'];
 const privateChannels = ['child_order_events', 'parent_order_events'];
 
 const client = new RPCClient('wss://ws.lightstream.bitflyer.com/json-rpc', { protocols: undefined });
@@ -15,18 +14,20 @@ const client = new RPCClient('wss://ws.lightstream.bitflyer.com/json-rpc', { pro
 // connection handling
 client.on('connected', async () => {
   // subscribe to the Public Channels
-  for (const channel of publicChannels) {
-    try {
-      await client.call('subscribe', { channel });
-    } catch (e) {
-      console.log(channel, 'Subscribe Error:', e);
-      continue;
-    }
-    console.log(channel, 'Subscribed.');
-  }
+  await Promise.all(
+    publicChannels.map(async (channel) => {
+      try {
+        await client.call('subscribe', { channel });
+        console.log(channel, 'Subscribed.');
+      } catch (e) {
+        console.log(channel, 'Subscribe Error:', e);
+      }
+    }),
+  );
 
   // authentication parameters
   const now = Date.now();
+  // eslint-disable-next-line no-magic-numbers
   const nonce = crypto.randomBytes(16).toString('hex');
   const sign = crypto.createHmac('sha256', BITFLYER_API_SECRET).update(`${now}${nonce}`).digest('hex');
 
@@ -45,18 +46,19 @@ client.on('connected', async () => {
   console.log('auth', 'Authenticated.');
 
   // subscribe to the Private Channels
-  for (const channel of privateChannels) {
-    try {
-      await client.call('subscribe', { channel });
-    } catch (e) {
-      console.log(channel, 'Subscribe Error:', e);
-      continue;
-    }
-    console.log(channel, 'Subscribed.');
-  }
+  await Promise.all(
+    privateChannels.map(async (channel) => {
+      try {
+        await client.call('subscribe', { channel });
+        console.log(channel, 'Subscribed.');
+      } catch (e) {
+        console.log(channel, 'Subscribe Error:', e);
+      }
+    }),
+  );
 });
 
 // channel messages handling
-client.methods.set('channelMessage', (client, notify) => {
+client.methods.set('channelMessage', (_client, notify) => {
   console.log('channelMessage', notify.channel, notify.message);
 });
